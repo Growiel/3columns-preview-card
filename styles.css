@@ -1,0 +1,105 @@
+:root {
+    --orange: hsl(31, 77%, 52%);
+    --cyan: hsl(184, 100%, 22%);
+    --dark-cyan: hsl(179, 100%, 13%);
+    --white: hsla(0, 0%, 100%, 0.75);
+    --grey: hsl(0, 0%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 0.938rem;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+h3 {
+    font-family: 'Big Shoulders Display', cursive;
+    color: var(--grey);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+p {
+    color: var(--white);
+    /*margin-bottom: 90px;*/
+}
+
+button {
+    background-color: var(--grey);
+    border-radius: 25px;
+    padding: 0.938rem 1.875rem;
+    border-color: var(--grey);
+    border-width: 2px;
+    border-style: solid;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--grey) !important;
+}
+
+.preview-container {
+    display: grid;
+    justify-content: center;
+}
+
+.preview {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    padding: 3.125rem;
+}
+
+.preview--sedans {
+    background: var(--orange);
+    border-radius: 5px 5px 0 0;
+}
+
+.preview--sedans > button {
+    color: var(--orange);
+}
+
+.preview--suvs {
+    background: var(--cyan);
+}
+
+.preview--suvs > button {
+    color: var(--cyan);
+}
+
+.preview--luxury {
+    background: var(--dark-cyan);
+    border-radius: 0 0 5px 5px;
+}
+
+.preview--luxury > button {
+    color: var(--dark-cyan);
+}
+
+@media (min-width: 650px) {
+    .preview-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: column;
+        max-width: 90rem;
+        margin: 0 auto;
+    }
+
+    .preview--sedans {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .preview--luxury {
+        border-radius: 0 5px 5px 0;
+    }
+
+    button {
+        margin-top: 5.625rem;
+    }
+}
